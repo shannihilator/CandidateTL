@@ -1,32 +1,44 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import People  from './People.js';
+import People from './People.js';
+import LetterTable from './LetterTable.js';
 
 // App component - represents the whole app
 class App extends Component {
 
-    constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       people: [],
+      showLetterCount: false,
     }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      showLetterCount: !state.showLetterCount
+    }));
   }
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(data => this.setState({ people: data }));
-      console.log(this.state.people);
+    //console.log(this.state.people);
   }
-
 
   render() {
     return (
       <div className="container">
-        <header>
-          <h1>People</h1>
-        </header>
-        <People />
+        <People people={this.state.people} />
+        <button onClick={this.handleClick}>
+          {this.state.showLetterCount ? 'HIDE LETTER COUNT' : 'SHOW LETTER COUNT'}
+        </button>
+        {this.state.showLetterCount && 
+        <LetterTable people={this.state.people} />
+        }
       </div>
     );
   }
