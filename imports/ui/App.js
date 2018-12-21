@@ -42,7 +42,7 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.people);
+        //console.log(process.env.SIMPLE_APP_KEY);
         return (
 
             <div className="container">
