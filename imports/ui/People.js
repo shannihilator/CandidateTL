@@ -31,7 +31,7 @@ class People extends Component {
             )}
           </tbody>
         </table>
-        <br/>
+        <br />
       </div>
 
     );
