@@ -1,5 +1,5 @@
 # simple-app
-This app is built with Meteor and currently running at https://simple-app-web.herokuapp.com/
+This app is built with Meteor and React and currently running at https://simple-app-web.herokuapp.com/
 
 To run on your local environment, follow the instructions for installing meteor at https://www.meteor.com/install, clone this repo, then run 'meteor' from the root directory. App should be running at http://localhost:3000/
 
